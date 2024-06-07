@@ -1,0 +1,1 @@
+Create an app for me that loads some data from azure storage account and do a classification model on that data so that we can predict the column Y.

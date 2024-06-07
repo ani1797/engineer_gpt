@@ -1,10 +1,7 @@
+import os
 from pathlib import Path
-import sys, os
 
 from argparse import ArgumentParser, FileType
-
-from ml_engineer.core.ai import OpenAI
-from ml_engineer.core.engineer import Engineer
 
 def is_dir(path: str) -> Path:
     """Check if path is a directory."""
@@ -23,9 +20,3 @@ def cli(*args):
     
     parser.add_argument("--model", type=str, default="gpt35", help="The engine to use for the completion")
     return parser.parse_args(args)
-
-if __name__ == "__main__":
-    config = cli(*sys.argv[1:])
-    ai = OpenAI(model=config.model)
-    do_engineering = Engineer(config.input.read(), config.output, ai)
-    do_engineering()

@@ -1,0 +1,9 @@
+name: engineer_gpt
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.11.5
+  - pip
+  - pip:
+      - -r requirements.txt
